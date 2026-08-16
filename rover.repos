@@ -1,0 +1,5 @@
+---
+repositories:
+  src/embedded:
+    type: git
+    url: git@github.com:urc-uh/embedded-ws.git
