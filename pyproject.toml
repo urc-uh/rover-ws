@@ -1,0 +1,63 @@
+[project]
+name = "rover-ws"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.2",
+    "ty>=0.0.69",
+]
+
+[tool.uv]
+package = false
+python-preference = "only-system"
+
+[tool.uv.workspace]
+
+# To set your own ruff settings in addition to the ones here, add a `.ruff.toml` file to this directory.
+# Include the line `extend = "pyproject.toml"` then your own settings, for example:
+#
+# extend = "pyproject.toml"
+# output-format = "grouped"
+#
+# See https://docs.astral.sh/ruff/configuration for more information.
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+docstring-code-format = true
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+extend-select = [
+    "W",
+    "E",
+    "F",
+    "B",
+    "C4",
+    "I",
+    "N",
+    "D",
+    "S",
+    "T20",
+    "PT",
+    "ANN",
+]
+ignore = [
+    "W191",
+    "E111",
+    "E114",
+    "E117",
+    "D206",
+]
+logger-objects = ["node.get_logger()"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# Python packages and scripts should run on Linux or Windows.
+# May change in the future if we decide to only support Linux.
+[tool.ty.environment]
+python-platform = "all"
