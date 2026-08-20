@@ -7,6 +7,7 @@ All code intended to be run on or interact with the rover will be contained or i
 <!--ts-->
    * [Getting Started](#getting-started)
       * [ROS](#ros)
+   * [Development](#development)
    * [ROS](#ros-1)
       * [Installing ROS](#installing-ros)
          * [Container](#container)
