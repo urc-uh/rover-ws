@@ -1,0 +1,34 @@
+# FROM docker.io/osrf/ros:lyrical-desktop
+
+# RUN apt update && apt install --no-install-recommends -y unminimize
+# RUN yes| unminimize
+
+# RUN apt update && apt install --no-install-recommends -y \
+#     python3-vcs2l \
+#     python3-colcon-clean
+
+# RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# RUN curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py | python3
+
+# RUN echo "export ROS_DOMAIN_ID=27" >> /ros_entrypoint.sh
+
+FROM ubuntu:resolute
+
+# RUN apt update && apt install -y --no-install-recommends \
+#     ca-certificates \
+#     curl \
+#     dirmngr \
+#     gnupg2 \
+#     && rm -rf /var/lib/apt/lists/*
+
+RUN curl -L -o /tmp/ros2-apt-source.deb https://github.com/ros-infrastructure/ros-apt-source/releases/download/1.2.0/ros2-apt-source_1.2.0.resolute_all.deb \
+    apt install /tmp/ros2-apt-source.deb
+
+RUN apt update && apt install -y --no-install-recommends \
+    ros-lyrical-desktop=0.13.0-3* \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=ghcr.io/astral-sh/uv:0.12.3 /uv /uvx /bin/
+
+ENV ROS_DOMAIN_ID=27

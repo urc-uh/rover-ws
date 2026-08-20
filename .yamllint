@@ -1,0 +1,9 @@
+---
+extends: default
+
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+  - '*.repos'
+  - '.yamllint'
+  - '.clang-format'

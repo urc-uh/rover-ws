@@ -1,0 +1,21 @@
+# colcon
+install/
+log/
+build/
+
+# cpp
+compile_commands.json
+
+# python
+__pycache__/
+.venv/
+
+# documentation
+*.dox
+*.wikidoc
+
+# If you would like to change any ruff settings you can add a `.ruff.toml` file.
+# See the comment above the `[tool.ruff]` section of `pyproject.toml` for details.
+.ruff.toml
+
+.justcache
