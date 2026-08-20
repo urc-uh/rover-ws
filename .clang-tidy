@@ -1,0 +1,19 @@
+---
+Checks: 'bugprone-*,clang-analyzer-*,readability-identifier-naming,clang-diagnostic'
+WarningsAsErrors: ''
+HeaderFileExtensions:
+  - h
+  - hpp
+ImplementationFileExtensions:
+  - c
+  - cpp
+HeaderFilterRegex: '.*'
+ExcludeHeaderFilterRegex: ''
+FormatStyle:     none
+CheckOptions:
+  - { key: 'readability-identifier-naming.NamespaceCase',      value: lower_case }
+  - { key: 'readability-identifier-naming.FunctionCase',       value: lower_case }
+  - { key: 'readability-identifier-naming.VariableCase',       value: lower_case }
+  - { key: 'readability-identifier-naming.GlobalConstantCase', value: UPPER_CASE }
+SystemHeaders:   false
+...
