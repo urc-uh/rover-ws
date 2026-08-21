@@ -7,6 +7,22 @@ If you haven't got your workspace up and running yet, start with the [Getting St
 
 ## Table of Contents
 <!--ts-->
+   * [How To](#how-to)
+      * [File a bug report](#file-a-bug-report)
+      * [Request a feature](#request-a-feature)
+      * [Work on an ticket/issue](#work-on-an-ticketissue)
+      * [Submit a pull request](#submit-a-pull-request)
+         * [Rebase merging](#rebase-merging)
+   * [Style](#style)
+      * [Code](#code)
+         * [Markdown](#markdown)
+         * [C++](#c)
+         * [Python](#python)
+         * [Other](#other)
+      * [Pull requests](#pull-requests)
+      * [Commits](#commits)
+      * [Branch naming](#branch-naming)
+   * [AI Agents](#ai-agents)
 <!--te-->
 
 ## How To
