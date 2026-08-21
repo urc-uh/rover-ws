@@ -9,9 +9,6 @@ If you haven't got your workspace up and running yet, start with the [Getting St
 <!--ts-->
 <!--te-->
 
-## Code of Conduct
-This project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
-
 ## How To
 
 ### File a bug report
@@ -37,7 +34,7 @@ You can also select "Feature request" instead of "Bug report" if you want to req
     Also consider commenting about what you plan on starting with and what you might need help with and asking any implementation questions or clarifications on the acceptance criteria you may have.
 1. Click the "Create a branch" link under Development on the right side.
 1. Name the branch following the [style guide](#branch-naming) and create it.
-1. Run `git checkout -b <local_branch_name> origin/<branch_name>` where `<branch_name>` is the branch you just created and `<local_branch_name>` is what you want the branch to be called on your machine (it's a good idea to use the same name to avoid confusion, maybe minus the `feat/` or `fix/` prefix if you'd like).
+1. Run `git checkout -b <local_branch_name> origin/<branch_name>` where `<branch_name>` is the branch you just created and `<local_branch_name>` is what you want the branch to be called on your machine (it's a good idea to use the same name to avoid confusion).
 1. Make your changes, test them, commit them, and when you feel you have completed a logical unit of change, [submit a pull request](#submit-a-pull-request)!
 
 You can also create a branch locally and push to remote, but make sure after pushing to remote you open the issue and link the branch under "Development".
@@ -116,8 +113,9 @@ For rebase merging, use a descriptive title that starts with a capital letter an
 
 ### Commits
 We follow [scoped commits](https://scopedcommits.com).
-Following the convention on individual branches is unnecessary, as typically pull requests will use the squash strategy.
-Just make sure your pull request title follows the [Pull requests](#pull-requests) section.
+Following the convention on individual branches is often unnecessary as typically pull requests will use the squash strategy.
+However, good commit descriptions are still always a good idea and will help with writing the pull request description.
+If you use the squash strategy just make sure your pull request title follows the [Pull requests](#pull-requests) section.
 
 If the rebase strategy is used, follow the [Rebase merging](#rebase-merging) section and make sure every remaining commit message follows [scoped commits](https://scopedcommits.com).
 
@@ -125,14 +123,15 @@ If the rebase strategy is used, follow the [Rebase merging](#rebase-merging) sec
 We follow [conventional branch v1.0.0](https://conventionalbranch.org/v1.0.0).
 We don't use v1.1.0 because we do not accept purely LLM-generated contributions.
 Use the short versions of purpose prefixes (`feat/` and `fix/`).
+We will additionally use the `ci/` prefix for branches related to continuous integration features.
 If the branch is associated with an issue (it does not necessarily need to close the issue), include that in the branch name, for example: `feat/issue-1-add-some-feature`.
 
-If multiple people are working on the same branch, they may also further scope branches with their names if they find it necessary.
-For example, if Violet and Tyler are working together and want to keep their changes separate initially, they may use the branches `feat/issue-9-add-diff-drive-controller/violet` and `feat/issue-9-add-diff-drive-controller/tyler` respectively.
-However, these branches should not be used for pull requests.
+If multiple people are working on the same branch, they may add additional branches with names that end with respective team members names if they find it necessary.
+For example, if Violet and Tyler are working together and want to keep their changes separate initially, they may use the branches `feat/issue-9-add-diff-drive-controller-violet` and `feat/issue-9-add-diff-drive-controller-tyler` respectively.
+However, these branches should not be used for pull requests into `main`.
 First, Violet and Tyler should merge their changes into `feat/issue-9-add-diff-drive-controller` then submit a pull request to merge `feat/issue-9-add-diff-drive-controller` into `main`.
 
 ## AI Agents
 Purely LLM-generated pull requests are not accepted.
 For now, no other hard rules are in place for LLM usage, but this is subject to change if we have problems with low quality pull requests.
-If you are going to use AI, limit how much code it actually writes for you (especially in single blocks) and don't submit any code you don't understand and you should be fine.
+If you are going to use AI, limit how much code it actually writes for you (especially in single blocks), keep pull-requests small, and don't submit any code you don't understand and you should be fine.
