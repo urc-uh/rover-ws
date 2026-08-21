@@ -30,28 +30,28 @@ If you haven't got your workspace up and running yet, start with the [Getting St
 ### File a bug report
 If something doesn't seem to be working right, 
 1. Go to the [Issues tab](https://github.com/urc-uh/rover-ws/issues).
-1. Click on the "New issue" button.
-1. Select the "Bug report" option from the list.
-1. Answer everything in the template as best you can.
+2. Click on the "New issue" button.
+3. Select the "Bug report" option from the list.
+4. Answer everything in the template as best you can.
 
 You can also select "Feature request" instead of "Bug report" if you want to request some sort of additional functionality for the rover or the control interface.
 
 ### Request a feature
 1. Go to the [Issues tab](https://github.com/urc-uh/rover-ws/issues).
-1. Click on the "New issue" button.
-1. Select the "Bug report" option from the list.
-1. Answer everything in the template as best you can.
+2. Click on the "New issue" button.
+3. Select the "Bug report" option from the list.
+4. Answer everything in the template as best you can.
 
 ### Work on an ticket/issue
 1. Go to the [current software project](https://github.com/urc-uh/projects/5).
-1. Select a ticket from the "Ready" column.
+2. Select a ticket from the "Ready" column.
     Look for one marked "good first issue" if available and it is your first time contributing, especially if you are not very comfortable in the environment.
-1. Add a comment that pings `@maintainers` asking them to change the ticket status to "In progress".
+4. Add a comment that pings `@maintainers` asking them to change the ticket status to "In progress".
     Also consider commenting about what you plan on starting with and what you might need help with and asking any implementation questions or clarifications on the acceptance criteria you may have.
-1. Click the "Create a branch" link under Development on the right side.
-1. Name the branch following the [style guide](#branch-naming) and create it.
-1. Run `git checkout -b <local_branch_name> origin/<branch_name>` where `<branch_name>` is the branch you just created and `<local_branch_name>` is what you want the branch to be called on your machine (it's a good idea to use the same name to avoid confusion).
-1. Make your changes, test them, commit them, and when you feel you have completed a logical unit of change, [submit a pull request](#submit-a-pull-request)!
+4. Click the "Create a branch" link under Development on the right side.
+5. Name the branch following the [style guide](#branch-naming) and create it.
+6. Run `git checkout -b <local_branch_name> origin/<branch_name>` where `<branch_name>` is the branch you just created and `<local_branch_name>` is what you want the branch to be called on your machine (it's a good idea to use the same name to avoid confusion).
+7. Make your changes, test them, commit them, and when you feel you have completed a logical unit of change, [submit a pull request](#submit-a-pull-request)!
 
 You can also create a branch locally and push to remote, but make sure after pushing to remote you open the issue and link the branch under "Development".
 
@@ -99,13 +99,6 @@ Using the tools specified below before committing will speed up the review proce
 #### Markdown
 Use a separate line for each sentence.
 This makes git diffs a lot easier to read and ensures that small changes don't end up affecting many lines of code when a paragraph is reformatted.
-For the same reasons use the format
-```markdown
-1. Step one
-1. Step two
-1. ...
-```
-when writing numbered lists (the correct numbers are inserted when displayed on GitHub and other places).
 
 #### C++
 - `clang-format`
