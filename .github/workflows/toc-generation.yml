@@ -30,4 +30,4 @@ jobs:
         shell: bash
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: Auto update markdown ToC
+          commit_message: Auto update markdown Table of Contents
