@@ -1,0 +1,33 @@
+name: Table of Contents Generation
+on:
+  push:
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+
+jobs:
+  Generate-ToC:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          curl https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc -o gh-md-toc
+          chmod a+x gh-md-toc
+          for file in "README.md" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md"
+          do
+            if [ -f $file ] && [ $(grep --count '<[!]--ts-->' $file) -eq 1 ]
+            then
+              echo "Generating Table of Contents for ${file}"
+              ./gh-md-toc --insert --no-backup --hide-footer --skip-header $file
+            fi
+          done
+          rm gh-md-toc
+        shell: bash
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Auto update markdown ToC
