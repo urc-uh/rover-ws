@@ -85,8 +85,13 @@ See [here](https://gitcheatsheet.dev/docs/advanced/interactive-rebase) for more 
 Once you've properly rebased your local branch, run `git log origin/main..HEAD --oneline` and check that the first lines follow [scoped commits](https://scopedcommits.com).
 You should also run `git log origin/main..HEAD` and make sure the full commit messages include a detailed body.
 
-Then, run `git push --force-with-lease` and open a pull request.
+Then, run `git push --force` and open a pull request.
 Add a comment to the pull request noting you would like to rebase and explain why you think it is necessary.
+> [!CAUTION]
+> `git push --force` will overwrite the branch history which can cause serious issues.
+> DO NOT do this if other people are working on the branch or other branches are using commits from this branch.
+> To avoid this, you can create a new branch for the pull request.
+> Again, avoid this section if you aren't comfortable with git or a rebase isn't necessary.
 
 ## Style
 These conventions should be followed as much as possible, but none are absolutely set in stone.
