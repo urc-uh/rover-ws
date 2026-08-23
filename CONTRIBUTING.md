@@ -132,7 +132,7 @@ If the rebase strategy is used, follow the [Rebase merging](#rebase-merging) sec
 We follow [conventional branch v1.0.0](https://conventionalbranch.org/v1.0.0).
 We don't use v1.1.0 because we do not accept purely LLM-generated contributions.
 Use the short versions of purpose prefixes (`feat/` and `fix/`).
-We will additionally use the `ci/` prefix for branches related to continuous integration features.
+We will additionally use the `ci/` prefix for branches related to continuous integration features and `docs/` for branches that will only have documentation changes.
 If the branch is associated with an issue (it does not necessarily need to close the issue), include that in the branch name, for example: `feat/issue-1-add-some-feature`.
 
 If multiple people are working on the same branch, they may add additional branches with names that end with respective team members names if they find it necessary.
