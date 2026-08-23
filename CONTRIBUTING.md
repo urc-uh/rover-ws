@@ -63,6 +63,11 @@ You can also create a branch locally and push to remote, but make sure after pus
 > As a general rule, try to keep your pull requests small enough that you think a reviewer will be able to understand the general idea of your changes in under thirty minutes and your changes can be effectively squashed into a single commit for merging without losing important history.
 
 ### Submit a pull request
+```console
+$ git pull --rebase origin main  # ensure you are up to date with the main branch
+$ just verify  # make sure all necessary tests still pass
+$ git push --force-with-lease --force-if-includes  # these flags are necessary if the rebase changed history but should be safe
+```
 
 #### Rebase merging
 > [!WARNING]
@@ -72,14 +77,15 @@ You can also create a branch locally and push to remote, but make sure after pus
 
 If you need to submit a single pull request while still preserving history within the request, you can use rebase merging instead.
 ```console
-$ git pull --rebase origin main  # ensure you are up to date with the main branch
+$ git pull --rebase origin/main  # ensure you are up to date with the main branch
 $ git rebase --interactive `git merge-base main HEAD`  # interactive rebase of all commits on the current branch since main
 ```
 Then, use `pick` to select which commits you want to keep and `squash` to move changes to the previous `pick`ed commit.
 You will then be given an opportunity to combine the commit messages of any squashed commits.
 If you need to edit the messages any `pick`ed commits with no `squash`ed commits below them, use `reword` instead.
 If you don't need to combine the commit messages of any `squash`ed commits (for example, if the commit is just a typo fix) use `fixup` instead.
-It's also a good idea to add the line `exec just verify all` after every set of commits to ensure every individual commit passes all tests.
+It's also a good idea to add the line `exec just verify` after every set of commits to ensure every individual commit passes all tests.
+Alternatively, you can run `git rebase -i --exec "just verify" origin/main` after completing the rebase.
 See [here](https://gitcheatsheet.dev/docs/advanced/interactive-rebase) for more information on interactive rebases.
 
 Once you've properly rebased your local branch, run `git log origin/main..HEAD --oneline` and check that the first lines follow [scoped commits](https://scopedcommits.com).
