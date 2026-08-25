@@ -19,9 +19,24 @@ All code intended to be run on or interact with the rover will be contained or i
 
 ## Getting Started
 
+### Command Line
+
+### Git
+
 ### ROS
 Developing or using most of the code in this repository requires an installation of [ROS 2 Lyrical Luth](https://docs.ros.org/en/lyrical).
 For information on installation methods, see [Installing ROS](#installing-ros).
+
+### Vcs2l
+Additional repositories are pulled into the workspace using [Vcs2l](https://github.com/ros-infrastructure/vcs2l).
+To clone them first make sure Vcs2l is installed with
+```console
+$ just install tools
+```
+then run
+```console
+$ vcs import --input rover.repos
+```
 
 ## ROS
 
