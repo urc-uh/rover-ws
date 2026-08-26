@@ -1,4 +1,4 @@
 # UH URC Team ROS 2 Workspace
 
-This is where our ROS 2 workspace for our rover is.
-For now, all code related to our rover's function lives here.
+This repository contains the ROS 2 workspace for our rover.
+All code intended to be run on or interact with the rover will be contained or imported here as a centralized space for integration.
