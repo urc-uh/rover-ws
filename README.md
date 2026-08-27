@@ -6,7 +6,10 @@ All code intended to be run on or interact with the rover will be contained or i
 ## Table of Contents
 <!--ts-->
    * [Getting Started](#getting-started)
+      * [Command Line](#command-line)
+      * [Git](#git)
       * [ROS](#ros)
+      * [Vcs2l](#vcs2l)
    * [ROS](#ros-1)
       * [Installing ROS](#installing-ros)
          * [Container](#container)
