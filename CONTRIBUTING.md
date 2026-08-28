@@ -50,7 +50,7 @@ You can also select "Feature request" instead of "Bug report" if you want to req
 You can also create a branch locally and push to remote, but make sure after pushing to remote you open the issue and link the branch under "Development".
 
 > [!TIP]
-> You do **not** have to close the issue in a single pull request.
+> You **do not** have to close the issue in a single pull request.
 > In fact, in most cases, it is probably better not to.
 > Any time you feel you have completed a logically connected set of changes (that do not break the build or functionality) you should submit a pull request.
 > Simpler pull requests are easier to review and long-lived branches that make a lot of sweeping changes before being merged back in can cause a lot of complications and delay being able to actually use your code!
@@ -58,7 +58,7 @@ You can also create a branch locally and push to remote, but make sure after pus
 
 ### Submit a pull request
 ```console
-$ git pull --rebase origin main  # ensure you are up to date with the main branch
+$ git fetch && git rebase origin/main  # ensure you are up to date with the main branch
 $ just verify  # make sure all necessary tests still pass
 $ git push --force-with-lease --force-if-includes  # these flags are necessary if the rebase changed history but should be safe
 ```
@@ -68,13 +68,13 @@ $ git push --force-with-lease --force-if-includes  # these flags are necessary i
 > [!WARNING]
 > This section is intended for more advanced users.
 > If you aren't comfortable with git, just stick to small pull requests and use squash merging.
-> Even if you are comfortable with git, you should stick to squash merges whenever possible.
+> Even if you are comfortable with git, you should stick to small squash merges whenever possible.
 
 If you need to submit a single pull request while still preserving history within the request, you can use rebase merging instead.
 First, `git push` the branch and check Github to see if any automatic CI commits were added.
 If there are any, make sure and `git pull` them so you can include them in the rebase and reduce extraneous commits.
 ```console
-$ git pull --rebase origin/main  # ensure you are up to date with the main branch
+$ git fetch && git rebase origin/main  # ensure you are up to date with the main branch
 $ git rebase --interactive `git merge-base main HEAD`  # interactive rebase of all commits on the current branch since main
 ```
 Then, use `pick` to select which commits you want to keep and `squash` to move changes to the previous `pick`ed commit.
@@ -83,17 +83,18 @@ If you need to edit the messages any `pick`ed commits with no `squash`ed commits
 If you don't need to combine the commit messages of any `squash`ed commits (for example, if the commit is just a typo fix) use `fixup` instead.
 It's also a good idea to add the line `exec just verify` after every set of commits to ensure every individual commit passes all tests.
 Alternatively, you can run `git rebase -i --exec "just verify" origin/main` after completing the rebase.
-See [here](https://gitcheatsheet.dev/docs/advanced/interactive-rebase) for more information on interactive rebases.
+
+See [here](https://gitcheatsheet.dev/docs/advanced/interactive-rebase) for more information on interactive rebases if you need help with the rebase process.
 
 Once you've properly rebased your local branch, run `git log origin/main..HEAD --oneline` and check that the first lines follow [scoped commits](https://scopedcommits.com).
 You should also run `git log origin/main..HEAD` and make sure the full commit messages include a detailed body.
 
-Then, run `git push --force` and open a pull request.
+Finally, you can run `git push --force-with-lease --force-if-includes` and open a pull request.
 Add a comment to the pull request noting you would like to rebase and explain why you think it is necessary.
 > [!CAUTION]
-> `git push --force` will overwrite the branch history which can cause serious issues.
-> DO NOT do this if other people are working on the branch or other branches are using commits from this branch.
-> To avoid this, you can create a new branch for the pull request.
+> `git push --force-with-lease --force-if-includes` is safer than `git push --force` but it still changes history and can overwrite someone else's changes, particularly if you are working in an IDE that `git fetch`es in the background.
+> Try to avoid this after an interactive rebase (it should be safe after rebasing `origin/main`) if other people may be working off the same branch.
+> If this is the case, or just to be safe, you can create a new branch after rebasing off `origin/main` but before the interactive rebase, then use the new branch for your pull request.
 > Again, avoid this section if you aren't comfortable with git or a rebase isn't necessary.
 
 ## Style
