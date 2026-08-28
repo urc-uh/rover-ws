@@ -108,3 +108,28 @@ Follow the ROS 2 lyrical documentation [installation guide](https://docs.ros.org
 
 > [!WARNING]
 > Only use one of the [binary packages](https://docs.ros.org/en/lyrical/Installation.html#binary-packages) unless you are sure you know what you are doing.
+
+### ROS Primer
+[ROS](https://docs.ros.org/en/lyrical/About-ROS.html) (Robot Operating System) is a framework and collection of tools and libraries we will use to program the rover.
+It facilitates using mature libraries to solve many of the more difficult robotics programming challenges, interacting with and observing a robot from a different computer, and using several programs that are useful for debugging, testing, and data visualization purposes.
+The way ROS runs also allows us to write modular code, meaning if we write our packages correctly we should be able to reuse the code with an entirely different robot (or just an updated version of our rover) with little adjustment.
+
+A good way to familiarize yourself with the basics of working in ROS is to work through the [beginner](https://docs.ros.org/en/lyrical/Tutorials/Beginner-CLI-Tools.html) [tutorials](https://docs.ros.org/en/lyrical/Tutorials/Beginner-Client-Libraries.html).
+Make sure you actually follow the instructions, don't just read them, especially if working in a terminal environment is new to you.
+They can be a little tedious, but getting comfortable in the environment and familiar with how the ROS-specific code looks will help _a lot_ starting out.
+
+When working through [Creating a workspace](https://docs.ros.org/en/lyrical/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) make a new empty workspace, and use it for the rest of the tutorials.
+This will help avoid accidentally cluttering this workspace with unrelated code.
+Do come back to this workspace and try to find or test things you are learning in this codebase, and experiment with the examples you create in the tutorials.
+
+When you get to the programming-based tutorials you can follow either the Python or C++ tutorials (or both).
+ROS allows us to write programs in any mix of languages without it changing how other packages interact with it.
+C++ and Python are the officially supported languages, so for now we will only be using those.
+Right now, the plan is to write our code in C++ where necessitated by the ROS package or external library we are using and use Python everywhere else.
+This will include at least firmware (though firmware will not require ROS) and hardware controllers.
+
+#### Interfaces
+Some of the most important things to understand conceptually are [interfaces](https://docs.ros.org/en/lyrical/Concepts/Basic/Interfaces-Topics-Services-Actions.html) as these are how we will communicate between different systems on the rover.
+For example, most sensors will have an associated publisher constantly updating a [topic](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Topics.html), stateful data or data processing may be handled through a [service](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Services.html), and anything involving motion will be initiated through an [action](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Actions.html).
+Reference back to these articles anytime interfaces come up while you work through the tutorials and as you begin working in ROS.
+See if you can understand why the particular interface (topic, service, or action) was selected for the application and when a different interface might be appropriate.
