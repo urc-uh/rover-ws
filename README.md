@@ -25,6 +25,9 @@ All code intended to be run on or interact with the rover will be contained or i
 Developing or using most of the code in this repository requires an installation of [ROS 2 Lyrical Luth](https://docs.ros.org/en/lyrical).
 For information on installation methods, see [Installing ROS](#installing-ros).
 
+## Development
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ## ROS
 
 ### Installing ROS
