@@ -71,6 +71,8 @@ $ git push --force-with-lease --force-if-includes  # these flags are necessary i
 > Even if you are comfortable with git, you should stick to squash merges whenever possible.
 
 If you need to submit a single pull request while still preserving history within the request, you can use rebase merging instead.
+First, `git push` the branch and check Github to see if any automatic CI commits were added.
+If there are any, make sure and `git pull` them so you can include them in the rebase and reduce extraneous commits.
 ```console
 $ git pull --rebase origin/main  # ensure you are up to date with the main branch
 $ git rebase --interactive `git merge-base main HEAD`  # interactive rebase of all commits on the current branch since main
