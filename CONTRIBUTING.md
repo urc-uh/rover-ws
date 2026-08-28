@@ -1,5 +1,4 @@
 # Contributing
-
 Whether your a member of the team or anyone else, thank you for taking the time to contribute!
 
 This document is meant to help walk you through how you can request or submit additions and changes to the codebase.
@@ -65,6 +64,7 @@ $ git push --force-with-lease --force-if-includes  # these flags are necessary i
 ```
 
 #### Rebase merging
+
 > [!WARNING]
 > This section is intended for more advanced users.
 > If you aren't comfortable with git, just stick to small pull requests and use squash merging.
