@@ -103,28 +103,6 @@ Add a comment to the pull request noting you would like to rebase and explain wh
 These conventions should be followed as much as possible, but none are absolutely set in stone.
 If you feel a convention shouldn't apply to your work or you are confused on how to apply it, just make a note in your pull request and a maintainer will help.
 
-### Code
-Most of the code styling is enforced by formatters, linters, and analyzers via GitHub Actions during a pull request.
-Using the tools specified below before committing will speed up the review process, but if you are having difficulties submit a pull request as-is and a maintainer will assist you.
-
-#### Markdown
-Use a separate line for each sentence.
-This makes git diffs a lot easier to read and ensures that small changes don't end up affecting many lines of code when a paragraph is reformatted.
-
-#### C++
-- `clang-format`
-- `clang-tidy`
-The enforced code style more or less follows the LLVM standard with a few exceptions.
-The most important thing to note is that functions, methods, and variables follow `snake_case`.
-
-#### Python
-- `ruff`
-- `ty`
-Google docstring conventions are followed.
-
-#### Other
-- `yamllint`
-
 ### Pull requests
 Pull request titles should follow [scoped commits](https://scopedcommits.com) for squash merging.
 Related issues must be included like so: `scope(#1): description`, where `#1` is the issue number.
