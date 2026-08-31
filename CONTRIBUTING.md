@@ -1,5 +1,5 @@
 # Contributing
-Whether your a member of the team or anyone else, thank you for taking the time to contribute!
+Whether you're a member of the team or anyone else, thank you for taking the time to contribute!
 
 This document is meant to help walk you through how you can request or submit additions and changes to the codebase.
 If you haven't got your workspace up and running yet, start with the [Getting Started](README.md#getting-started) section in the README.
@@ -97,8 +97,8 @@ You can also reorder and delete commits.
 
 The purpose of this step is to refactor the history to make it clear and easy to read.
 This is _very important_ if you want to merge with rebase, as every commit will become part of the `main` branch history.
-If you want to merge with rebase, while doing the interactive rebase you should also be checking that every commit message follows the [commit style conventions](#commits) and has any other information that may be important included in the commit message body.
-Squash merges should also follow the [commit style conventions](#commits) but failing to do so won't necessarily prevent a merge and message bodies won't be checked.
+If you want to merge with rebase you should also be checking that every commit message follows the [commit style conventions](#commits) and has any other information that may be important included in the commit message body.
+Squash merges should also follow the [commit style conventions](#commits) but failing to do so won't necessarily prevent a merge and commit message bodies won't be checked.
 The commit from a squash merge comes from the pull request, so make sure the pull request title follows [our conventions](#pull-requests) and has a detailed description.
 
 > [!NOTE]
