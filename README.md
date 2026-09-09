@@ -31,6 +31,13 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## ROS
 
+> [!IMPORTANT]
+> ROS 2 Lyrical Luth documentation was reorganized.
+> This broke all of the documentation links.
+> The links have temporarily been replaced with links to the Kilted Kaiju documentation until this section can be rewritten.
+> The documentation should be similar enough that it still works, just replace any instance of `kilted` in commands with `lyrical`.
+> For example, `sudo apt install ros-kilted-desktop` should instead be `sudo apt install ros-lyrical-desktop` and when checking the `ROS_DISTRO` its value should be `lyrical` not `kilted`.
+
 ### Installing ROS
 
 > [!IMPORTANT]
@@ -50,10 +57,10 @@ By using the proper Docker image, `ros-lyrical` will come preinstalled so you wo
 You can integrate with VSCode for a full programming environment or just run ROS nodes in containers.
 
 ###### VSCode with Docker
-The Lyrical documentation includes a guide on [setting up ROS 2 with VSCode and Docker](https://docs.ros.org/en/lyrical/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container).
+The Lyrical documentation includes a guide on [setting up ROS 2 with VSCode and Docker](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container).
 If you want to do this on Windows I would recommend following [this tutorial](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode) to install VSCode and WSL2.
 Then you can follow the guide.
-Skip the [Install VS Code](https://docs.ros.org/en/lyrical/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#install-vs-code) section and when you reach [Add your ROS 2 workspace](https://docs.ros.org/en/lyrical/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#add-your-ros-2-workspace) instead of making a new workspace `ws`, cd to where you want to have the rover workspace, and run
+Skip the [Install VS Code](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#install-vs-code) section and when you reach [Add your ROS 2 workspace](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#add-your-ros-2-workspace) instead of making a new workspace `ws`, cd to where you want to have the rover workspace, and run
 ```console
 $ git clone https://github.com/urc-uh/rover-ws.git  # or git@github.com:urc-uh/rover.ws.git if you prefer ssh
 $ mkdir .devcontainer
@@ -63,7 +70,7 @@ Add the devcontainer.json and Dockerfile to the newly created `.devcontainer` di
 <!-- TODO: add documentation for Dockerfile when added -->
 
 ###### Running ROS Nodes in Docker
-If you would like to just use containers to run ROS 2 nodes and program in an isolated environment follow the guide [running ROS 2 nodes in Docker](https://docs.ros.org/en/lyrical/How-To-Guides/Run-2-nodes-in-single-or-separate-docker-containers.html) in the ROS 2 Lyrical documentation.
+If you would like to just use containers to run ROS 2 nodes and program in an isolated environment follow the guide [running ROS 2 nodes in Docker](https://docs.ros.org/en/kilted/How-To-Guides/Run-2-nodes-in-single-or-separate-docker-containers.html) in the ROS 2 Lyrical documentation.
 Using the method only allows you to run nodes and creates a totally isolated container, meaning you will have to clone the workspace, install tools and dependencies, and build any time you start a fresh container before you run nodes.
 You also won't be able to effectively set up a programming environment within the container, use code that hasn't been pushed to the git repository, or run GUI programs without additional configuration, so I would recommend still following one of the other installation methods for your development and pre-commit testing environment.
 
@@ -92,21 +99,21 @@ However, I do recommend setting `--home` to a different directory that your user
 For more distrobox configuration options, see the [`distrobox-create` documentation](https://distrobox.it/usage/distrobox-create).
 
 #### Native Installation
-Follow the ROS 2 lyrical documentation [installation guide](https://docs.ros.org/en/lyrical/Installation.html).
+Follow the ROS 2 lyrical documentation [installation guide](https://docs.ros.org/en/kilted/Installation.html).
 
 > [!WARNING]
-> Only use one of the [binary packages](https://docs.ros.org/en/lyrical/Installation.html#binary-packages) unless you are sure you know what you are doing.
+> Only use one of the [binary packages](https://docs.ros.org/en/kilted/Installation.html#binary-packages) unless you are sure you know what you are doing.
 
 ### ROS Primer
-[ROS](https://docs.ros.org/en/lyrical/About-ROS.html) (Robot Operating System) is a framework and collection of tools and libraries we will use to program the rover.
+[ROS](https://docs.ros.org/en/kilted/About-ROS.html) (Robot Operating System) is a framework and collection of tools and libraries we will use to program the rover.
 It facilitates using mature libraries to solve many of the more difficult robotics programming challenges, interacting with and observing a robot from a different computer, and using several programs that are useful for debugging, testing, and data visualization purposes.
 The way ROS runs also allows us to write modular code, meaning if we write our packages correctly we should be able to reuse the code with an entirely different robot (or just an updated version of our rover) with little adjustment.
 
-A good way to familiarize yourself with the basics of working in ROS is to work through the [beginner](https://docs.ros.org/en/lyrical/Tutorials/Beginner-CLI-Tools.html) [tutorials](https://docs.ros.org/en/lyrical/Tutorials/Beginner-Client-Libraries.html).
+A good way to familiarize yourself with the basics of working in ROS is to work through the [beginner](https://docs.ros.org/en/kilted/Tutorials/Beginner-CLI-Tools.html) [tutorials](https://docs.ros.org/en/kilted/Tutorials/Beginner-Client-Libraries.html).
 Make sure you actually follow the instructions, don't just read them, especially if working in a terminal environment is new to you.
 They can be a little tedious, but getting comfortable in the environment and familiar with how the ROS-specific code looks will help _a lot_ starting out.
 
-When working through [Creating a workspace](https://docs.ros.org/en/lyrical/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) make a new empty workspace, and use it for the rest of the tutorials.
+When working through [Creating a workspace](https://docs.ros.org/en/kilted/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) make a new empty workspace, and use it for the rest of the tutorials.
 This will help avoid accidentally cluttering this workspace with unrelated code.
 Do come back to this workspace and try to find or test things you are learning in this codebase, and experiment with the examples you create in the tutorials.
 
@@ -117,7 +124,7 @@ Right now, the plan is to write our code in C++ where necessitated by the ROS pa
 This will include at least firmware (though firmware will not require ROS) and hardware controllers.
 
 #### Interfaces
-Some of the most important things to understand conceptually are [interfaces](https://docs.ros.org/en/lyrical/Concepts/Basic/Interfaces-Topics-Services-Actions.html) as these are how we will communicate between different systems on the rover.
-For example, most sensors will have an associated publisher constantly updating a [topic](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Topics.html), stateful data or data processing may be handled through a [service](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Services.html), and anything involving motion will be initiated through an [action](https://docs.ros.org/en/lyrical/Concepts/Basic/About-Actions.html).
+Some of the most important things to understand conceptually are [interfaces](https://docs.ros.org/en/kilted/Concepts/Basic/Interfaces-Topics-Services-Actions.html) as these are how we will communicate between different systems on the rover.
+For example, most sensors will have an associated publisher constantly updating a [topic](https://docs.ros.org/en/kilted/Concepts/Basic/About-Topics.html), stateful data or data processing may be handled through a [service](https://docs.ros.org/en/kilted/Concepts/Basic/About-Services.html), and anything involving motion will be initiated through an [action](https://docs.ros.org/en/kilted/Concepts/Basic/About-Actions.html).
 Reference back to these articles anytime interfaces come up while you work through the tutorials and as you begin working in ROS.
 See if you can understand why the particular interface (topic, service, or action) was selected for the application and when a different interface might be appropriate.
