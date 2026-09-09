@@ -57,7 +57,7 @@ By using the proper Docker image, `ros-lyrical` will come preinstalled so you wo
 You can integrate with VSCode for a full programming environment or just run ROS nodes in containers.
 
 ###### VSCode with Docker
-The Lyrical documentation includes a guide on [setting up ROS 2 with VSCode and Docker](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container).
+The Lyrical documentation includes a guide on [setting up ROS 2 with VSCode and Docker](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html).
 If you want to do this on Windows I would recommend following [this tutorial](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode) to install VSCode and WSL2.
 Then you can follow the guide.
 Skip the [Install VS Code](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#install-vs-code) section and when you reach [Add your ROS 2 workspace](https://docs.ros.org/en/kilted/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html#add-your-ros-2-workspace) instead of making a new workspace `ws`, cd to where you want to have the rover workspace, and run
